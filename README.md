@@ -1,4 +1,4 @@
-# library
+# Library
 
 ## Technologies
 Built with:
