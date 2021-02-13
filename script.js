@@ -1,3 +1,6 @@
+let myLibrary = [];
+
+
 // Object constructor for making book objects
 
 function Book(title, author, pages, read) {
@@ -10,7 +13,19 @@ function Book(title, author, pages, read) {
     }
 }
 
+
+
+function addNewBook() {
 // Call the object constructor function
-const book = new Book("lotr", "JR", "500", "no");
-// Log the function inside the object constructer
-console.log(book.info());
+const newBook = new Book("lotr", "JR", "500", "no");
+const newBook1 = new Book("lotr", "JR", "500", "no");
+const newBook2 = new Book("lotr", "JR", "500", "no");
+
+myLibrary.push(newBook);
+myLibrary.push(newBook1);
+myLibrary.push(newBook2);
+console.table(myLibrary);
+
+}
+
+addNewBook();
