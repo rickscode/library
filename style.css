@@ -2,10 +2,21 @@ body {
    background-color: #BCED91; 
 }
 
-.button-container {
+.bookshelf {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 35vw;
     
-    margin-top: 35vh;
-    margin-left: 40vw;
+}
+
+.bookshelf div {
+    border: 1px solid red;
+}
+
+.button-container {
+    position:absolute;
+    bottom:0;
+    right:0;
 }
 
 button {
