@@ -17,6 +17,8 @@ function Book(title, author, pages, read) {
 
 function addNewBook() {
 // Call the object constructor function
+// Call new Book and use userinput 
+// Create empty variables for title,author, etc
 const newBook = new Book("lotr", "JR", "500", "no");
 const newBook1 = new Book("lotr", "JR", "500", "no");
 const newBook2 = new Book("lotr", "JR", "500", "no");

@@ -1,3 +1,9 @@
 body {
-    
+   background-color: #BCED91; 
+}
+
+.button-container {
+    position: relative;
+    margin-top: 50vh;
+    margin-left: 50vw;
 }
