@@ -1,3 +1,16 @@
+// Increase button size on hover
+function bigImg(x) {
+  x.style.height = "225px";
+  x.style.width = "225px";
+}
+// Decrease button size after hover
+function normalImg(x) {
+  x.style.height = "200px";
+  x.style.width = "200px";
+}
+
+
+
 let myLibrary = [];
 
 
