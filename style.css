@@ -5,7 +5,7 @@ body {
 .bookshelf {
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-column-gap: 35vw;
+    grid-column-gap: 15vw;
     
 }
 
