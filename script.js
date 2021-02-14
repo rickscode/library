@@ -1,3 +1,6 @@
+const bookshelf = document.querySelector(".bookshelf");
+
+
 // Increase button size on hover
 function bigImg(x) {
   x.style.height = "200px";
@@ -30,9 +33,7 @@ function Book(title, author, pages, read) {
 
 
 function addNewBook() {
-// Call the object constructor function
-// Call new Book and use userinput 
-// Create empty variables for title,author, etc
+
 const newBook = new Book("lotr", "JR", "500", "no");
 const newBook1 = new Book("lotr", "JR", "500", "no");
 const newBook2 = new Book("lotr", "JR", "500", "no");
@@ -40,26 +41,33 @@ const newBook2 = new Book("lotr", "JR", "500", "no");
 myLibrary.push(newBook);
 myLibrary.push(newBook1);
 myLibrary.push(newBook2);
-//console.table(myLibrary);
+
 addBookToShelf()
 }
 
+
 // Function to display books in myLibrary
-const bookshelf = document.querySelector(".bookshelf");
-
 function addBookToShelf() {
-  // Loop through myLibrary array 
+  // Create nodelist from myLibrary array 
   myLibrary.forEach(function(item){
-    // Create new div with binding
+    // Create new div element to hold book info
     let newBookNode = document.createElement("div");
-    // newBookNode.textContent = item.title;
-    // newBookNode.textContent += item.author;
-    // Assign book content to new div
     let bookTitle = document.createElement("p");
-    bookTitle.textContent = "Title:" + item.title;
+    let bookAuthor = document.createElement("p");
+    let bookPages = document.createElement("p");
 
+    // Assign textcontent to new elements 
+    bookTitle.textContent = "Title:" + item.title;
+    bookAuthor.textContent = "Author:" + item.author;
+    bookPages.textContent = "Pages:" + item.pages;
+
+    // Append child nodes too parent
     newBookNode.appendChild(bookTitle);
+    newBookNode.appendChild(bookAuthor);
+    newBookNode.appendChild(bookPages);
     bookshelf.appendChild(newBookNode);
+
+    // Improve design of book cards
     
   }
 
