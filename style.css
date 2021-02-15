@@ -15,7 +15,14 @@ body {
     
 }
 
+.bookshelf img {
+    width: 80%;
+    height: 80%;
+}
+
 .bookshelf div {
+    text-align: center;
+
     border: 1px solid red;
     width: 16vw;
 }

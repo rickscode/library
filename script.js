@@ -52,16 +52,22 @@ function addBookToShelf() {
   myLibrary.forEach(function(item){
     // Create new div element to hold book info
     let newBookNode = document.createElement("div");
+    let bookCard = document.createElement("IMG");
     let bookTitle = document.createElement("p");
     let bookAuthor = document.createElement("p");
     let bookPages = document.createElement("p");
+    // Add picture too book card
+    
+    
 
-    // Assign textcontent to new elements 
+    // Assign textcontent to new elements
+    bookCard.setAttribute("src", "images/books.png"); 
     bookTitle.textContent = "Title:" + item.title;
     bookAuthor.textContent = "Author:" + item.author;
     bookPages.textContent = "Pages:" + item.pages;
 
     // Append child nodes too parent
+    newBookNode.appendChild(bookCard);
     newBookNode.appendChild(bookTitle);
     newBookNode.appendChild(bookAuthor);
     newBookNode.appendChild(bookPages);
