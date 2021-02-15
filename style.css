@@ -2,15 +2,22 @@ body {
    background-color: #BCED91; 
 }
 
+.logo {
+    
+}
+
 .bookshelf {
     display: grid;
+    width: 100%;
+    margin-top: 10vh;
     grid-template-columns: auto auto auto;
-    grid-column-gap: 15vw;
+    grid-column-gap: 25%;
     
 }
 
 .bookshelf div {
     border: 1px solid red;
+    width: 16vw;
 }
 
 .button-container {
