@@ -1,4 +1,21 @@
 const bookshelf = document.querySelector(".bookshelf");
+// Binding for add book button
+const newBook = document.querySelector("#add");
+// When user clicks a pop form appears
+newBook.addEventListener("click", inputForm);
+
+// Form contains input windows for book information
+// Title, Author, etc
+
+// Function for click event on add button
+
+// Create form in html and CSS then hide until add button pressed
+
+function inputForm(e) {
+        
+        addNewBook();
+        console.log("hello");
+}
 
 
 // Increase button size on hover
@@ -58,8 +75,6 @@ function addBookToShelf() {
     let bookPages = document.createElement("p");
     // Add picture too book card
     
-    
-
     // Assign textcontent to new elements
     bookCard.setAttribute("src", "images/books.png"); 
     bookTitle.textContent = "Title:" + item.title;
@@ -77,6 +92,6 @@ function addBookToShelf() {
     
   }
 
-  )};
+)};
 
-addNewBook();
+//addNewBook();
