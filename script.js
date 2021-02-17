@@ -3,6 +3,8 @@ const bookshelf = document.querySelector(".bookshelf");
 const newBook = document.querySelector("#add");
 // Binding for form container dom
 const formContainer = document.querySelector(".form-container");
+
+
 // When user clicks a pop form appears
 newBook.addEventListener("click", inputForm);
 
@@ -13,13 +15,45 @@ newBook.addEventListener("click", inputForm);
 
 // Create form in html and CSS then hide until add button pressed
 
-function inputForm(e) {
+function inputForm() {
+        
+        // Create new DOM node elements when add button is clicked
+
         let popup = document.createElement("form");
+        let label = document.createElement("label");
         let titleInput = document.createElement("input");
+        let authorInput = document.createElement("input");
+        let pagesInput = document.createElement("input");
+        let readBook = document.createElement("radio")
+        let submit = document.createElement("button");
+        let close = document.createElement("button");
+
+
 
         titleInput.setAttribute("type", "text");
         titleInput.setAttribute("placeholder", "enter title");
+        titleInput.setAttribute("name", "title");
+
+        authorInput.setAttribute("type", "text");
+        authorInput.setAttribute("placeholder", "enter author");
+        authorInput.setAttribute("name", "author");
+
+        pagesInput.setAttribute("type", "number");
+        pagesInput.setAttribute("placeholder", "pages read");
+        pagesInput.setAttribute("name", "pages");
+
+        // set radio attributes and append
+
+        submit.textContent = "ENTER";
+        close.textContent = "CLOSE";
+        
+        
+        popup.appendChild(label);
         popup.appendChild(titleInput);
+        popup.appendChild(authorInput);
+        popup.appendChild(pagesInput);
+        popup.appendChild(submit);
+        popup.appendChild(close);
         formContainer.appendChild(popup);
 
         addNewBook();
