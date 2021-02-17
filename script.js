@@ -1,6 +1,8 @@
 const bookshelf = document.querySelector(".bookshelf");
 // Binding for add book button
 const newBook = document.querySelector("#add");
+// Binding for form container dom
+const formContainer = document.querySelector(".form-container");
 // When user clicks a pop form appears
 newBook.addEventListener("click", inputForm);
 
@@ -12,7 +14,14 @@ newBook.addEventListener("click", inputForm);
 // Create form in html and CSS then hide until add button pressed
 
 function inputForm(e) {
-        
+        let popup = document.createElement("form");
+        let titleInput = document.createElement("input");
+
+        titleInput.setAttribute("type", "text");
+        titleInput.setAttribute("placeholder", "enter title");
+        popup.appendChild(titleInput);
+        formContainer.appendChild(popup);
+
         addNewBook();
         console.log("hello");
 }
