@@ -19,39 +19,42 @@ function inputForm() {
         
         // Create new DOM node elements when add button is clicked
 
+
         let popup = document.createElement("form");
-        let label = document.createElement("label");
         let titleInput = document.createElement("input");
         let authorInput = document.createElement("input");
         let pagesInput = document.createElement("input");
-        let readBook = document.createElement("radio")
+        let readBook = document.createElement("input")
         let submit = document.createElement("button");
         let close = document.createElement("button");
 
 
 
         titleInput.setAttribute("type", "text");
-        titleInput.setAttribute("placeholder", "enter title");
+        titleInput.setAttribute("placeholder", "TITLE");
         titleInput.setAttribute("name", "title");
 
         authorInput.setAttribute("type", "text");
-        authorInput.setAttribute("placeholder", "enter author");
+        authorInput.setAttribute("placeholder", "AUTHOR");
         authorInput.setAttribute("name", "author");
 
         pagesInput.setAttribute("type", "number");
-        pagesInput.setAttribute("placeholder", "pages read");
+        pagesInput.setAttribute("placeholder", "PAGES READ");
         pagesInput.setAttribute("name", "pages");
 
         // set radio attributes and append
+        readBook.setAttribute("type", "radio");
+        readBook.setAttribute("name", "read");
 
         submit.textContent = "ENTER";
         close.textContent = "CLOSE";
         
         
-        popup.appendChild(label);
+        
         popup.appendChild(titleInput);
         popup.appendChild(authorInput);
         popup.appendChild(pagesInput);
+        popup.appendChild(readBook);
         popup.appendChild(submit);
         popup.appendChild(close);
         formContainer.appendChild(popup);
