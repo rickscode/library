@@ -1,12 +1,26 @@
 const bookshelf = document.querySelector(".bookshelf");
-// Binding for add book button
+// Binding for add book button node
 const newBook = document.querySelector("#add");
-// Binding for form container dom
+// Binding for form container node
 const formContainer = document.querySelector(".form-container");
+// Binding for submit button node
+
+// Increase button size on hover
+function bigImg(x) {
+  x.style.height = "200px";
+  x.style.width = "200px";
+  }
+  
+// Decrease button size after hover
+function normalImg(x) {
+  x.style.height = "150px";
+  x.style.width = "150px";
+}
 
 
-// When user clicks a pop form appears
+// Event listeners
 newBook.addEventListener("click", inputForm);
+
 
 // Form contains input windows for book information
 // Title, Author, etc
@@ -66,23 +80,7 @@ function inputForm() {
         popup.appendChild(close);
         formContainer.appendChild(popup);
 
-        addNewBook();
-        console.log("hello");
 }
-
-
-// Increase button size on hover
-function bigImg(x) {
-  x.style.height = "200px";
-  x.style.width = "200px";
-  }
-  
-// Decrease button size after hover
-function normalImg(x) {
-  x.style.height = "150px";
-  x.style.width = "150px";
-}
-
 
 
 let myLibrary = [];
@@ -102,22 +100,10 @@ function Book(title, author, pages, read) {
 
 
 
-function addNewBook() {
-
-const newBook = new Book("lotr", "JR", "500", "no");
-const newBook1 = new Book("lotr", "JR", "500", "no");
-const newBook2 = new Book("lotr", "JR", "500", "no");
-
-myLibrary.push(newBook);
-myLibrary.push(newBook1);
-myLibrary.push(newBook2);
-
-addBookToShelf()
-}
-
 
 // Function to display books in myLibrary
 function addBookToShelf() {
+  
   // Create nodelist from myLibrary array 
   myLibrary.forEach(function(item){
     // Create new div element to hold book info
@@ -147,4 +133,26 @@ function addBookToShelf() {
 
 )};
 
-//addNewBook();
+// collect form input values and create new book object
+
+document.addEventListener("click",function(e){
+  e.preventDefault();
+  myLibrary = [];
+  if(e.target.id == "submit-button") {
+    let bookTitle = document.getElementById("title").value;
+    let bookAuthor = document.getElementById("author").value;
+    let bookPages = document.getElementById("pages").value;
+    let newBook = new Book(bookTitle, bookAuthor, bookPages, "no");
+    myLibrary.push(newBook);
+    addBookToShelf()
+    closeForm();
+    
+   }
+});
+
+
+// close imput form
+function closeForm() {
+  let shutForm = document.getElementById("book-form");
+  shutForm.remove();
+}
