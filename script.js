@@ -29,15 +29,17 @@ function inputForm() {
         let close = document.createElement("button");
 
 
-
+        titleInput.id = "title";
         titleInput.setAttribute("type", "text");
         titleInput.setAttribute("placeholder", "TITLE");
         titleInput.setAttribute("name", "title");
 
+        authorInput.id = "author";
         authorInput.setAttribute("type", "text");
         authorInput.setAttribute("placeholder", "AUTHOR");
         authorInput.setAttribute("name", "author");
 
+        pagesInput.id = "pages";
         pagesInput.setAttribute("type", "number");
         pagesInput.setAttribute("placeholder", "PAGES READ");
         pagesInput.setAttribute("name", "pages");
@@ -50,7 +52,7 @@ function inputForm() {
         close.textContent = "CLOSE";
         
         
-        
+        popup.id = "book-form";
         popup.appendChild(titleInput);
         popup.appendChild(authorInput);
         popup.appendChild(pagesInput);
