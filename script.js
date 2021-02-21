@@ -47,8 +47,13 @@ function inputForm() {
         // set radio attributes and append
         readBook.setAttribute("type", "radio");
         readBook.setAttribute("name", "read");
+        // fix this
+        readBook.setAttribute("placeholder", "finished");
 
+        submit.id = "submit-button"
         submit.textContent = "ENTER";
+
+        close.id = "close-button";
         close.textContent = "CLOSE";
         
         
