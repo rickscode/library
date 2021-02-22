@@ -38,7 +38,6 @@ function inputForm() {
         let titleInput = document.createElement("input");
         let authorInput = document.createElement("input");
         let pagesInput = document.createElement("input");
-        let readBook = document.createElement("input")
         let submit = document.createElement("button");
         let close = document.createElement("button");
 
@@ -58,11 +57,8 @@ function inputForm() {
         pagesInput.setAttribute("placeholder", "PAGES READ");
         pagesInput.setAttribute("name", "pages");
 
-        // set radio attributes and append
-        readBook.setAttribute("type", "radio");
-        readBook.setAttribute("name", "read");
-        // fix this
-        readBook.setAttribute("placeholder", "finished");
+        
+        
 
         submit.id = "submit-button"
         submit.textContent = "ENTER";
@@ -75,7 +71,6 @@ function inputForm() {
         popup.appendChild(titleInput);
         popup.appendChild(authorInput);
         popup.appendChild(pagesInput);
-        popup.appendChild(readBook);
         popup.appendChild(submit);
         popup.appendChild(close);
         formContainer.appendChild(popup);
@@ -112,7 +107,7 @@ function addBookToShelf() {
     let bookTitle = document.createElement("p");
     let bookAuthor = document.createElement("p");
     let bookPages = document.createElement("p");
-    // Add picture too book card
+    
     
     // Assign textcontent to new elements
     bookCard.setAttribute("src", "images/books.png"); 
@@ -125,6 +120,7 @@ function addBookToShelf() {
     newBookNode.appendChild(bookTitle);
     newBookNode.appendChild(bookAuthor);
     newBookNode.appendChild(bookPages);
+    
     bookshelf.appendChild(newBookNode);
 
     // Improve design of book cards
