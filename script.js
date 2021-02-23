@@ -5,6 +5,10 @@ const newBook = document.querySelector("#add");
 const formContainer = document.querySelector(".form-container");
 // Binding for submit button node
 
+
+// Event listeners
+newBook.addEventListener("click", inputForm);
+
 // Increase button size on hover
 function bigImg(x) {
   x.style.height = "200px";
@@ -17,30 +21,17 @@ function normalImg(x) {
   x.style.width = "150px";
 }
 
-
-// Event listeners
-newBook.addEventListener("click", inputForm);
-
-
-// Form contains input windows for book information
-// Title, Author, etc
-
-// Function for click event on add button
-
-// Create form in html and CSS then hide until add button pressed
+// Dynamic form
 
 function inputForm() {
         
-        // Create new DOM node elements when add button is clicked
-
-
+        // Create new DOM node elements
         let popup = document.createElement("form");
         let titleInput = document.createElement("input");
         let authorInput = document.createElement("input");
         let pagesInput = document.createElement("input");
         let submit = document.createElement("button");
         let close = document.createElement("button");
-
 
         titleInput.id = "title";
         titleInput.setAttribute("type", "text");
@@ -57,15 +48,11 @@ function inputForm() {
         pagesInput.setAttribute("placeholder", "PAGES READ");
         pagesInput.setAttribute("name", "pages");
 
-        
-        
-
         submit.id = "submit-button"
         submit.textContent = "ENTER";
 
         close.id = "close-button";
         close.textContent = "CLOSE";
-        
         
         popup.id = "book-form";
         popup.appendChild(titleInput);
@@ -77,9 +64,7 @@ function inputForm() {
 
 }
 
-
 let myLibrary = [];
-
 
 // Object constructor for making book objects
 
@@ -92,9 +77,6 @@ function Book(title, author, pages, read) {
         return `${title} by ${author}, ${pages} pages, read: ${read}`
     }
 }
-
-
-
 
 // Function to display books in myLibrary
 function addBookToShelf() {
@@ -129,7 +111,7 @@ function addBookToShelf() {
 
 )};
 
-// collect form input values and create new book object
+// create new book object from form
 
 document.addEventListener("click",function(e){
   e.preventDefault();
@@ -145,7 +127,6 @@ document.addEventListener("click",function(e){
     
    }
 });
-
 
 // close imput form
 function closeForm() {
