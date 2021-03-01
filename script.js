@@ -1,25 +1,22 @@
 const bookshelf = document.querySelector(".bookshelf");
 // Binding for add book button node
 const newBook = document.querySelector("#add");
-// Binding for form container node
-const formContainer = document.querySelector(".form-container");
-// Binding for submit button node
-
-
+// Binding for form bookParentNode node
+const form = document.querySelector(".form-container");
 // Event listeners
 newBook.addEventListener("click", inputForm);
 
 
 // Increase button size on hover
-function bigImg(x) {
-  x.style.height = "200px";
-  x.style.width = "200px";
+function bigImg(bookParentNode) {
+  bookParentNode.style.height = "200pbookParentNode";
+  bookParentNode.style.width = "200pbookParentNode";
   }
   
 // Decrease button size after hover
-function normalImg(x) {
-  x.style.height = "100px";
-  x.style.width = "100px";
+function normalImg(bookParentNode) {
+  bookParentNode.style.height = "100pbookParentNode";
+  bookParentNode.style.width = "100pbookParentNode";
 }
 
 // Dynamic form
@@ -36,12 +33,12 @@ function inputForm() {
         let close = document.createElement("button");
 
         titleInput.id = "title";
-        titleInput.setAttribute("type", "text");
+        titleInput.setAttribute("type", "tebookParentNodet");
         titleInput.setAttribute("placeholder", "TITLE");
         titleInput.setAttribute("name", "title");
 
         authorInput.id = "author";
-        authorInput.setAttribute("type", "text");
+        authorInput.setAttribute("type", "tebookParentNodet");
         authorInput.setAttribute("placeholder", "AUTHOR");
         authorInput.setAttribute("name", "author");
 
@@ -51,10 +48,10 @@ function inputForm() {
         pagesInput.setAttribute("name", "pages");
 
         submit.id = "submit-button"
-        submit.textContent = "ENTER";
+        submit.tebookParentNodetContent = "ENTER";
 
         close.id = "close-button";
-        close.textContent = "CLOSE";
+        close.tebookParentNodetContent = "CLOSE";
         
         popup.id = "book-form";
         popup.appendChild(titleInput);
@@ -62,7 +59,7 @@ function inputForm() {
         popup.appendChild(pagesInput);
         popup.appendChild(submit);
         popup.appendChild(close);
-        formContainer.appendChild(popup);
+        form.appendChild(popup);
       
 }
 
@@ -91,20 +88,24 @@ function addBookToShelf() {
     let bookTitle = document.createElement("p");
     let bookAuthor = document.createElement("p");
     let bookPages = document.createElement("p");
+    let removeBook = document.createElement("button");
+    removeBook.tebookParentNodetContent = "REMOVE BOOK";
+    removeBook.id = "remove-book";
+    // removeBook.setAttribute("type", "radio");
+    newBookNode.id = "book-item";
     
-    
-    // Assign textcontent to new elements
+    // Assign tebookParentNodetcontent to new elements
     bookCard.setAttribute("src", "images/books.png"); 
-    bookTitle.textContent = "Title:" + item.title;
-    bookAuthor.textContent = "Author:" + item.author;
-    bookPages.textContent = "Pages:" + item.pages;
+    bookTitle.tebookParentNodetContent = "Title:" + item.title;
+    bookAuthor.tebookParentNodetContent = "Author:" + item.author;
+    bookPages.tebookParentNodetContent = "Pages:" + item.pages;
 
     // Append child nodes too parent
     newBookNode.appendChild(bookCard);
     newBookNode.appendChild(bookTitle);
     newBookNode.appendChild(bookAuthor);
     newBookNode.appendChild(bookPages);
-    
+    newBookNode.appendChild(removeBook);
     bookshelf.appendChild(newBookNode);
 
     // Improve design of book cards
@@ -143,3 +144,15 @@ function closeForm() {
   let shutForm = document.getElementById("book-form");
   shutForm.remove();
 }
+
+// remove book card
+document.addEventListener("click",function(e){
+  if(e.target.id == "remove-book") {
+    let bookParentNode = e.target.parentElement;
+    let bookNodeList = Array.from(bookParentNode.childNodes);
+    bookNodeList.forEach((element) => {
+    bookParentNode.removeChild(element);
+  });
+}
+});
+
