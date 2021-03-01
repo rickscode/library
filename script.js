@@ -9,6 +9,7 @@ const formContainer = document.querySelector(".form-container");
 // Event listeners
 newBook.addEventListener("click", inputForm);
 
+
 // Increase button size on hover
 function bigImg(x) {
   x.style.height = "200px";
@@ -25,6 +26,7 @@ function normalImg(x) {
 
 function inputForm() {
         
+   
         // Create new DOM node elements
         let popup = document.createElement("form");
         let titleInput = document.createElement("input");
@@ -61,7 +63,7 @@ function inputForm() {
         popup.appendChild(submit);
         popup.appendChild(close);
         formContainer.appendChild(popup);
-
+      
 }
 
 let myLibrary = [];
@@ -123,6 +125,14 @@ document.addEventListener("click",function(e){
     let newBook = new Book(bookTitle, bookAuthor, bookPages, "no");
     myLibrary.push(newBook);
     addBookToShelf()
+    closeForm();
+    
+   }
+});
+
+document.addEventListener("click",function(e){
+  e.preventDefault();
+  if(e.target.id == "close-button") {
     closeForm();
     
    }
