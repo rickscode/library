@@ -77,43 +77,6 @@ class Book{
   }
 }
 
-// Function to display books in myLibrary
-function addBookToShelf() {
-  
-  // Create nodelist from myLibrary array 
-  myLibrary.forEach(function(item){
-    // Create new div element to hold book info
-    let newBookNode = document.createElement("div");
-    let bookCard = document.createElement("IMG");
-    let bookTitle = document.createElement("p");
-    let bookAuthor = document.createElement("p");
-    let bookPages = document.createElement("p");
-    let removeBook = document.createElement("button");
-    removeBook.textContent = "REMOVE BOOK";
-    removeBook.id = "remove-book";
-    // removeBook.setAttribute("type", "radio");
-    newBookNode.id = "book-item";
-    
-    // Assign tebookParentNodetcontent to new elements
-    bookCard.setAttribute("src", "images/books.png"); 
-    bookTitle.textContent = "Title:" + item.title;
-    bookAuthor.textContent = "Author:" + item.author;
-    bookPages.textContent = "Pages:" + item.pages;
-
-    // Append child nodes too parent
-    newBookNode.appendChild(bookCard);
-    newBookNode.appendChild(bookTitle);
-    newBookNode.appendChild(bookAuthor);
-    newBookNode.appendChild(bookPages);
-    newBookNode.appendChild(removeBook);
-    bookshelf.appendChild(newBookNode);
-
-    // Improve design of book cards
-    
-  }
-
-)};
-
 // create new book object from form
 
 document.addEventListener("click",function(e){
@@ -130,6 +93,41 @@ document.addEventListener("click",function(e){
     
    }
 });
+
+// Function to display books in myLibrary
+function addBookToShelf() {
+  
+  // Create nodelist from myLibrary array 
+  myLibrary.forEach(function(item){
+    // Create new div element to hold book info
+    let newBookNode = document.createElement("div");
+    let bookCard = document.createElement("IMG");
+    let bookTitle = document.createElement("p");
+    let bookAuthor = document.createElement("p");
+    let bookPages = document.createElement("p");
+    let removeBook = document.createElement("button");
+    removeBook.textContent = "REMOVE BOOK";
+    removeBook.id = "remove-book";
+    newBookNode.id = "book-item";
+    
+    // Assign tebookParentNodetcontent to new elements
+    bookCard.setAttribute("src", "images/books.png"); 
+    bookTitle.textContent = "Title:" + item.title;
+    bookAuthor.textContent = "Author:" + item.author;
+    bookPages.textContent = "Pages:" + item.pages;
+
+    // Append child nodes too parent
+    newBookNode.appendChild(bookCard);
+    newBookNode.appendChild(bookTitle);
+    newBookNode.appendChild(bookAuthor);
+    newBookNode.appendChild(bookPages);
+    newBookNode.appendChild(removeBook);
+    bookshelf.appendChild(newBookNode);
+    
+  }
+
+)};
+
 
 document.addEventListener("click",function(e){
   e.preventDefault();
